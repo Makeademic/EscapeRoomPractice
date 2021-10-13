@@ -1,0 +1,202 @@
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2, h3{
+  color: #fff;
+  text-shadow:
+    /* Red/White glow */
+    0 0 7px #f00,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    /* Red glow */
+    0 0 42px #f00,
+    0 0 82px #f00,
+    0 0 92px #f00,
+    0 0 102px #f00,
+    0 0 151px #f00;
+}
+
+@keyframes bgcolorchange{
+  0%{background-color:azure;}
+  25%{background-color:azure;}
+  50%{background-color:mintcream;}
+  75%{background-color:honeydew;}
+  100%{background-color:azure;}
+}
+
+div.letter{
+background-color: azure;
+  animation-name: bgcolorchange;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spinning{
+  0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+div.spinningdisk{
+  width="100"; 
+  height="100";
+  animation-name: spinning;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+#navigationborder{
+  text-align:center; 
+  border:6px double black; padding: 10px; 
+  margin: 10px 100px;
+  box-shadow: 5px 5px 10px blue, -5px -5px 10px blue;
+}
+
+/* Container holding the image and the text */
+	.container {
+	  position: relative;
+	  text-align: center;
+	  color: white;
+	}
+	/* Centered text */
+	.centered {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	}
+
+/*Animate Title*/
+@keyframes animated_div
+	{
+	0% {transform: rotate(0deg);left:0px;}
+	25% {transform: rotate(20deg);left:0px;}
+	50% {transform: rotate(0deg);left:500px;}
+	55% {transform: rotate(0deg);left:500px;}
+	70% {transform: rotate(0deg);left:500px;background:#1ec7e6;}
+	100% {transform: rotate(-360deg);left:0px;}
+	}
+
+h1{
+  animation:animated_div 5s 1;
+position:relative;
+}
+
+/*https://chromium.googlesource.com/chromium/blink/+/72fef91ac1ef679207f51def8133b336a6f6588f/Source/core/css/mediaControls.css?autodive=0%2F%2F%2F */
+audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
+                background-color: red;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
